@@ -1,0 +1,19 @@
+# Build outputs
+build/
+dist/
+
+# Backups (contain user binaries)
+backups/
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Legacy files from development
+dmg-staging/
+RWD4EVR.dmg
+entitlements.plist
+patch_rewind.sh
+post_patch_config.sh
+unpatch_rewind.sh
