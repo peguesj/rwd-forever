@@ -15,7 +15,7 @@ if ! app_exists; then
 fi
 
 echo "  Rewind.app:  $(get_app_version)"
-echo "  Architecture: $(uname -m)"
+echo "  Architecture: $(sysctl -n hw.machine 2>/dev/null || uname -m)"
 echo "  Bytes at patch offset: $(get_current_bytes)"
 echo ""
 

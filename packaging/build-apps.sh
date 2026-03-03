@@ -56,6 +56,10 @@ EXEC
     <true/>
     <key>NSHighResolutionCapable</key>
     <true/>
+    <key>LSArchitecturePriority</key>
+    <array>
+        <string>arm64</string>
+    </array>
 </dict>
 </plist>
 PLIST

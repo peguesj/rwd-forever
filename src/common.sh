@@ -36,7 +36,11 @@ is_rewind_running() {
 }
 
 is_arm64() {
-    [ "$(uname -m)" = "arm64" ]
+    # Use sysctl to check actual hardware, not process arch.
+    # uname -m can report x86_64 when running under Rosetta.
+    local hw
+    hw=$(sysctl -n hw.machine 2>/dev/null || uname -m)
+    [ "$hw" = "arm64" ]
 }
 
 app_exists() {
