@@ -1,6 +1,19 @@
-# RWD4EVR
+<p align="center">
+  <img src="assets/icons/icon_256x256.png" alt="RWD4EVR" width="128" height="128">
+</p>
 
-**Rewind.app Lives Forever** — bypass the post-acquisition shutdown kill switch.
+<h1 align="center">RWD4EVR</h1>
+
+<p align="center">
+  <strong>Rewind.app Lives Forever</strong> — bypass the post-acquisition shutdown kill switch.
+  <br><br>
+  <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/peguesj/rwd-forever?style=flat-square" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/peguesj/rwd-forever?style=flat-square" alt="License"></a>
+  <img src="https://img.shields.io/badge/platform-macOS%2012.3%2B-blue?style=flat-square" alt="Platform">
+  <img src="https://img.shields.io/badge/arch-arm64-green?style=flat-square" alt="Architecture">
+</p>
+
+---
 
 Rewind.app was a macOS screen recording and memory search tool that ran entirely
 on-device. After Meta acquired Limitless (formerly Rewind AI) in November 2025,
@@ -9,11 +22,15 @@ Rewind requires zero server contact to function — all recording, OCR,
 transcription, and search happen locally — this patch disables the kill switch
 and restores full functionality.
 
+<p align="center">
+  <img src="assets/dmg-background.png" alt="RWD4EVR DMG" width="580">
+</p>
+
 ## Quick Start
 
 ### From DMG (recommended)
 
-1. Download `RWD4EVR.dmg` from [Releases](../../releases)
+1. Download `RWD4EVR.dmg` from [Releases](../../releases/latest)
 2. Verify the checksum: `shasum -a 256 -c SHA256SUMS`
 3. Open the DMG
 4. Double-click **RWD4EVR Installer**
@@ -22,7 +39,7 @@ and restores full functionality.
 ### From Source
 
 ```bash
-git clone https://github.com/jeremiahpegues/rwd-forever.git
+git clone https://github.com/peguesj/rwd-forever.git
 cd rwd-forever
 make release
 open dist/RWD4EVR.dmg
@@ -31,7 +48,7 @@ open dist/RWD4EVR.dmg
 ### CLI (advanced)
 
 ```bash
-git clone https://github.com/jeremiahpegues/rwd-forever.git
+git clone https://github.com/peguesj/rwd-forever.git
 cd rwd-forever
 bash src/install.sh
 ```
@@ -92,19 +109,23 @@ bash src/verify.sh
 
 ```
 src/
-  common.sh        Shared constants, offsets, and helper functions
-  install.sh       Installer (CLI + GUI mode via --gui flag)
-  uninstall.sh     Uninstaller (CLI + GUI mode)
-  verify.sh        Patch verification and status report
+  common.sh           Shared constants, offsets, and helper functions
+  install.sh          Installer (CLI + GUI mode via --gui flag)
+  uninstall.sh        Uninstaller (CLI + GUI mode)
+  verify.sh           Patch verification and status report
 packaging/
-  build-apps.sh    Builds macOS .app bundles from src/ scripts
-  build-dmg.sh     Creates the distributable DMG with custom layout
-  gen-icon.swift    Generates app icons using Core Graphics
+  build-apps.sh       Builds macOS .app bundles from src/ scripts
+  build-dmg.sh        Creates the distributable DMG with custom layout
+  gen-icon.swift      Generates app icons using Core Graphics
   gen-background.swift  Generates DMG background artwork
+  gen-social.swift    Generates GitHub social preview image
 assets/
-  entitlements.plist    Entitlements preserved during re-signing
-INTEL.md               Reverse engineering analysis and notes
-Makefile               Build system (make release)
+  icons/              App icon PNGs (16x16 through 512x512 @2x)
+  dmg-background.png  DMG window background
+  social-preview.png  GitHub social preview (1280x640)
+  entitlements.plist  Entitlements preserved during re-signing
+INTEL.md              Reverse engineering analysis and notes
+Makefile              Build system (make release)
 ```
 
 ## FAQ
