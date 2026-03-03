@@ -13,7 +13,7 @@ backups/
 # Legacy files from development
 dmg-staging/
 RWD4EVR.dmg
-entitlements.plist
+/entitlements.plist
 patch_rewind.sh
 post_patch_config.sh
 unpatch_rewind.sh
