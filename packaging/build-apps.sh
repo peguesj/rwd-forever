@@ -60,15 +60,10 @@ EXEC
 </plist>
 PLIST
 
-    # Generate icon if the generator exists
-    if [ -f "$PROJECT_ROOT/packaging/gen-icon.swift" ]; then
-        local iconset_dir="$BUILD_DIR/${name}.iconset"
-        mkdir -p "$iconset_dir"
-        swift "$PROJECT_ROOT/packaging/gen-icon.swift" "$iconset_dir" "$name"
-        iconutil -c icns "$iconset_dir" -o "$app_dir/Contents/Resources/AppIcon.icns" 2>/dev/null || true
-        rm -rf "$iconset_dir"
-
-        # Reference icon in plist
+    # Copy app icon
+    local icns="$PROJECT_ROOT/assets/AppIcon.icns"
+    if [ -f "$icns" ]; then
+        cp "$icns" "$app_dir/Contents/Resources/AppIcon.icns"
         /usr/libexec/PlistBuddy -c "Add :CFBundleIconFile string AppIcon" "$app_dir/Contents/Info.plist" 2>/dev/null || \
         /usr/libexec/PlistBuddy -c "Set :CFBundleIconFile AppIcon" "$app_dir/Contents/Info.plist"
     fi

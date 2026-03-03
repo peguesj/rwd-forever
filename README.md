@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/icons/icon_256x256.png" alt="RWD4EVR" width="128" height="128">
+  <img src="assets/RWD4EVR.png" alt="RWD4EVR" width="128" height="128">
 </p>
 
 <h1 align="center">RWD4EVR</h1>
@@ -120,7 +120,8 @@ packaging/
   gen-background.swift  Generates DMG background artwork
   gen-social.swift    Generates GitHub social preview image
 assets/
-  icons/              App icon PNGs (16x16 through 512x512 @2x)
+  RWD4EVR.png         App icon (+ @0.5x through @4x variants)
+  AppIcon.icns        macOS icon bundle (built from RWD4EVR.png)
   dmg-background.png  DMG window background
   social-preview.png  GitHub social preview (1280x640)
   entitlements.plist  Entitlements preserved during re-signing
